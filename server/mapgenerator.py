@@ -74,10 +74,11 @@ class MapGenerator():
                 new_tile = {'points':(p1,p2,p3,p4,p5,p6),'row':row,'col':col}
                 tiles.append(new_tile)            
 
-        return (points,tiles,stride)
+        height = stride-3
+        return (points,tiles,stride,height,sp)
 
 mg = MapGenerator()
-(points, tiles, stride) = mg.generate_mesh(xb=50,yb=50)
+(points, tiles, stride, height, spacing) = mg.generate_mesh(xb=150,yb=50)
 tiles = mg.seed_tiles(tiles,stride)
 
 
@@ -87,6 +88,8 @@ with open('state.json','r') as f:
 data['points'] = points
 data['tiles'] = tiles
 data['stride'] = stride
+data['height'] = height
+data['spacing'] = spacing
 
 with open('state.json','w') as f:
     json.dump(data,f,indent=4)
