@@ -2,15 +2,13 @@
     "players": [
         {
             "name": "slee",
-            "id": 0
+            "id": 0,
+            "livery_id": 0
         },
         {
-            "name": "ann",
-            "id": 1
-        },
-        {
-            "name": "bob",
-            "id": 2
+            "name": "picard",
+            "id": 1,
+            "livery_id": 1
         }
     ],
     "points": [

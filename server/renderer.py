@@ -26,8 +26,8 @@ class Renderer():
             p1 = (bx+10,by+4)
             p2 = (bx+16,by+16)
             p3 = (bx+4,ty+16)
-            modpid = pid % len(Rules['liveries'])
-            imgdraw.polygon((p1,p2,p3), fill=Rules['liveries'][modpid]['fill'], outline ="white")
+            livery_id = player['livery_id']
+            imgdraw.polygon((p1,p2,p3), fill=Rules['liveries'][livery_id]['fill'], outline ="white")
 
     def render_map(self,output_file,data):
         points = data['points']

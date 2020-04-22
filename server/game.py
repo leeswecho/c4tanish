@@ -3,6 +3,7 @@ import os
 import shutil
 
 from renderer import Renderer
+from rules import Rules
 
 class Game():
     def __init__(self, loc='state.json'):
@@ -59,10 +60,11 @@ class Game():
         names = [i['name'] for i in self.data['players']]
         if player['name'] not in names:
             player['id'] = len(self.data['players'])
+            player['livery_id'] = player['id'] % len(Rules['liveries'])
             self.data['players'].append(player)
         return player
 
-    def create_player_struct(self,name):
+    def create_player_struct(self,name):        
         new_player = {'name':name}
         return new_player
 
