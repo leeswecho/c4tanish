@@ -13,6 +13,7 @@ class MapGenerator():
         
         for i in range(0,len(tiles)):
              tiles[i]['type'] = 6 # ocean
+             tiles[i]['dice'] = 0 # ocean
              row = tiles[i]['row']
              col = tiles[i]['col']
              diffrow = row - rowc
@@ -22,6 +23,8 @@ class MapGenerator():
              norm = abs(diffrow/2) + abs(diffcol)
              if (norm < 5) and (abs(diffrow) < 5): # and (diffcol < 5):                 
                  tiles[i]['type'] = random.randint(0,5) # ocean
+                 tiles[i]['dice'] = random.randint(1,12) # ocean
+                 
         return tiles
 
     def generate_mesh(self,xb=0,yb=0,sp=30,stride=15):
@@ -78,7 +81,7 @@ class MapGenerator():
         return (points,tiles,stride,height,sp)
 
 mg = MapGenerator()
-(points, tiles, stride, height, spacing) = mg.generate_mesh(xb=150,yb=50)
+(points, tiles, stride, height, spacing) = mg.generate_mesh(xb=120,yb=60,sp=40)
 tiles = mg.seed_tiles(tiles,stride)
 
 

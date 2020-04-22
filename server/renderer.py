@@ -9,6 +9,26 @@ class Renderer():
     def __init__(self):
         pass
 
+    def sub_render_players(self, imgdraw,data):
+        players = data['players']
+
+        tx = 900
+        ty = 80
+        imgdraw.text((tx,ty),'Players:',fill='#ffffff',align='left')
+        for player in players:
+            name = player['name']
+            pid = player['id']
+            tx = 930
+            ty = 100 + pid*20
+            imgdraw.text((tx,ty),name,fill='#ffffff',align='left')
+            bx = 900
+            by = 100 + pid*20
+            p1 = (bx+10,by+4)
+            p2 = (bx+16,by+16)
+            p3 = (bx+4,ty+16)
+            modpid = pid % len(Rules['liveries'])
+            imgdraw.polygon((p1,p2,p3), fill=Rules['liveries'][modpid]['fill'], outline ="white")
+
     def render_map(self,output_file,data):
         points = data['points']
         tiles = data['tiles']
@@ -16,10 +36,13 @@ class Renderer():
         height = data['height']
         spacing = data['spacing']
         
-        img = Image.new('RGB', (800, 500))
+        img = Image.new('RGB', (1200, 500))
 
         # create rectangle image 
-        img1 = ImageDraw.Draw(img)        
+        img1 = ImageDraw.Draw(img)
+
+        #render player names
+        self.sub_render_players(img1,data)
 
         for tile in tiles:
             shape = [(points[i]['x'],points[i]['y']) for i in tile['points']]
@@ -29,6 +52,12 @@ class Renderer():
 
             row = tile['row']
             col = tile['col']
+            if tile['dice'] != 0:
+                x = points[tile['points'][0]]['x']
+                y = points[tile['points'][0]]['y']
+                tx = x
+                ty = y - 5 + spacing / 2 
+                img1.text((tx,ty),str(tile['dice']),fill='#000000',align='center') 
             if row == 0:
                 x = points[tile['points'][0]]['x']
                 y = points[tile['points'][0]]['y']
