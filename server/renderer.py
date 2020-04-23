@@ -89,6 +89,10 @@ class Renderer():
         # create rectangle image 
         img1 = ImageDraw.Draw(img)
 
+        # render map text
+        for i in range(0, len(data['game_msg'])):
+            img1.text((900,300+i*10),data['game_msg'][i], align='left')
+
         #render player names
         self.sub_render_players(img1,data)
 

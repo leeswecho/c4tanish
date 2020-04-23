@@ -33,12 +33,32 @@ class my_server(http.server.SimpleHTTPRequestHandler):
             self.send_header('Location','players/' + name + '/main.html')
             self.end_headers()
         elif 'refresh.php' in self.path:
+            post_str = post_data.decode('utf-8')
+            post_substrs = post_str.split('&')
+            name_substrs = post_substrs[0].split('=')
+            name = name_substrs[1]
+            #clear player's ret msg
+            player = g.get_player_by_name(name)
+            g.set_ret_msg(player['id'],'')
             # alternate way of figuring out the name            
             redirect_path = self.path.replace('refresh.php','main.html')
             g.refresh_player_files()            
             self.send_response(301)
             self.send_header('Location',redirect_path)
-            self.end_headers()
+            self.end_headers()            
+        elif 'roll_dice.php' in self.path:
+            post_str = post_data.decode('utf-8')
+            post_substrs = post_str.split('&')
+            name_substrs = post_substrs[0].split('=')
+            name = name_substrs[1]
+            g.roll_dice(name)
+            g.commit()
+            # alternate way of figuring out the name            
+            redirect_path = self.path.replace('roll_dice.php','main.html')
+            g.refresh_player_files()            
+            self.send_response(301)
+            self.send_header('Location',redirect_path)
+            self.end_headers()            
         elif 'build_village.php' in self.path:
             post_str = post_data.decode('utf-8')
             post_substrs = post_str.split('&')

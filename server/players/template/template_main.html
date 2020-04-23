@@ -8,7 +8,7 @@
       <title>Game!</title>
     </head>
     <body> 
-
+<h4 style="color:-template-player-message-color-";>-template-player-message-</h4>
 <br>
  Welcome -template-name-! . You are player: -template-player-number-
  <br>
@@ -16,11 +16,24 @@
 <br>
 	<img src="../../img/state.jpg" width="1200" height="500">
 <br>
+<h1>Resources</h1>
+<img src="../../img/-template-resource0-img-" width="50" height="50"> <input type="text" size="4" name="-template-resource0-name-" value="-template-resource0-qty-" readonly> 
+<img src="../../img/-template-resource1-img-" width="50" height="50"> <input type="text" size="4" name="-template-resource0-name-" value="-template-resource1-qty-" readonly> 
+<img src="../../img/-template-resource2-img-" width="50" height="50"> <input type="text" size="4" name="-template-resource0-name-" value="-template-resource2-qty-" readonly> 
+<img src="../../img/-template-resource3-img-" width="50" height="50"> <input type="text" size="4" name="-template-resource0-name-" value="-template-resource3-qty-" readonly> 
+<img src="../../img/-template-resource4-img-" width="50" height="50"> <input type="text" size="4" name="-template-resource0-name-" value="-template-resource4-qty-" readonly> 
+<img src="../../img/-template-resource5-img-" width="50" height="50"> <input type="text" size="4" name="-template-resource0-name-" value="-template-resource5-qty-" readonly> 
+
 <h1>Refresh</h1>
 <form action="refresh.php" method="post">
 <input type="hidden" name="player" value="-template-name-"><br>
 <input type="submit" value="Refresh">
 </form>
+<form action="roll_dice.php" method="post">
+<input type="hidden" name="player" value="-template-name-"><br>
+<input type="submit" value="Roll Dice!">
+</form>
+
 <h1>Game move:</h1>
 
 <form action="build_road.php" method="post">

@@ -13,7 +13,7 @@ class MapGenerator():
         colc = 6
         
         for i in range(0,len(tiles)):
-             tiles[i]['type'] = 6 # ocean
+             tiles[i]['type'] = 7 # ocean
              tiles[i]['dice'] = 0 # ocean
              row = tiles[i]['row']
              col = tiles[i]['col']
@@ -23,15 +23,15 @@ class MapGenerator():
                  diffcol -= 1#-1 accounts for the convention bias
              norm = abs(diffrow/2) + abs(diffcol)
              if (norm < 5) and (abs(diffrow) < 5): # and (diffcol < 5):                 
-                 tiles[i]['type'] = random.randint(0,5) # ocean
-                 tiles[i]['dice'] = random.randint(1,12) # ocean
+                 tiles[i]['type'] = random.randint(0,6) # everything but ocean
+                 tiles[i]['dice'] = random.randint(1,12) # dice
                  
         return tiles
 
-    def debug_add_structs(self,points,stride):
+    def debug_add_structs(self,points,stride,width):
         #just add some roads for testing
         roads = []
-        cd = CoordDecode(stride)
+        cd = CoordDecode(stride,width)
         roads.append({'p1':cd.decode('H10'),'p2':cd.decode('I11'),'owner':0})
         roads.append({'p1':cd.decode('I11'),'p2':cd.decode('I12'),'owner':0})
         roads.append({'p1':cd.decode('Q8'),'p2':cd.decode('R9'),'owner':1})
@@ -86,7 +86,8 @@ class MapGenerator():
                 #print(row)
                 new_tile = {'points':(p1,p2,p3,p4,p5,p6),'row':row,'col':col}
                 tiles.append(new_tile)
-
+            # do it twice so that tiles lay out in intended order
+            for i in range(0,stride-1):
                 p1 = (j+2)*stride+(i+1)
                 p2 = (j+3)*stride+(i+1)
                 p3 = (j+4)*stride+(i+1)
@@ -99,15 +100,16 @@ class MapGenerator():
                 new_tile = {'points':(p1,p2,p3,p4,p5,p6),'row':row,'col':col}
                 tiles.append(new_tile)            
 
+        width = stride-1
         height = stride-3
-        return (points,tiles,stride,height,sp)
+        return (points,tiles,stride,width,height,sp)
 
 
 if __name__ == "__main__": 
     mg = MapGenerator()
-    (points, tiles, stride, height, spacing) = mg.generate_mesh(xb=120,yb=60,sp=40)
+    (points, tiles, stride, width,height, spacing) = mg.generate_mesh(xb=120,yb=60,sp=40)
     tiles = mg.seed_tiles(tiles,stride)
-    (roads,villages,cities) = mg.debug_add_structs(points,stride)
+    (roads,villages,cities) = mg.debug_add_structs(points,stride,width)
 
     with open('state.json','r') as f:
         data = json.load(f)
@@ -115,11 +117,14 @@ if __name__ == "__main__":
     data['points'] = points
     data['tiles'] = tiles
     data['stride'] = stride
+    data['width'] = width    
     data['height'] = height
     data['spacing'] = spacing
     data['roads'] = roads
     data['villages'] = villages
-    data['cities'] = cities    
+    data['cities'] = cities
+
+    data['game_msg'] = ''
 
     with open('state.json','w') as f:
         json.dump(data,f,indent=4)

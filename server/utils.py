@@ -1,8 +1,8 @@
 
-
 class CoordDecode():
-    def __init__(self, stride):
+    def __init__(self, stride,width):
         self.stride = stride
+        self.width = width
         
     def decode(self,coord):
         # convert to upper
@@ -33,6 +33,32 @@ class CoordDecode():
         # get the point index
         index = prow*self.stride + pcol
         return index
+
+    def get_touching_tiles(self,coord):
+        point_id = self.decode(coord)
+        return self.get_touching_tiles_index(point_id)
+        
+    def get_touching_tiles_index(self,point_id):
+        prow = int(point_id / self.stride)
+        pcol = point_id % self.stride
+
+        row = int(prow / 2)
+        rowrem = prow % 2
+        col = pcol
+
+        if (prow % 4) == 0:
+            bst = row*self.width + col
+            tchset = (bst,bst-self.width,bst-self.width-1)
+        elif (prow % 4) == 1:
+            bst = row*self.width + col
+            tchset = (bst,bst-1,bst-self.width-1)
+        elif (prow % 4) == 2:
+            bst = row*self.width + col
+            tchset = (bst-1,bst-self.width,bst-self.width-1)
+        else:   # (prow % 4) == 3:
+            bst = row*self.width + col
+            tchset = (bst,bst-1,bst-self.width)            
+        return tchset
 
     def isadjindex(self, i1, i2):
         prow = int(i1 / self.stride)
@@ -79,4 +105,4 @@ class CoordDecode():
 
 
 if __name__ == "__main__":
-    cd = CoordDecode(15)
+    cd = CoordDecode(15,14)
