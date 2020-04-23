@@ -15,8 +15,6 @@ class my_server(http.server.SimpleHTTPRequestHandler):
     def do_POST(self):
         """Serve a POST request.
 
-        This is only implemented for CGI scripts.
-
         """
         content_length = int(self.headers['Content-Length']) # <--- Gets the size of data
         post_data = self.rfile.read(content_length) # <--- Gets the data itself
@@ -34,11 +32,54 @@ class my_server(http.server.SimpleHTTPRequestHandler):
             self.send_response(301)
             self.send_header('Location','players/' + name + '/main.html')
             self.end_headers()
+        elif 'refresh.php' in self.path:
+            # alternate way of figuring out the name            
+            redirect_path = self.path.replace('refresh.php','main.html')
+            g.refresh_player_files()            
+            self.send_response(301)
+            self.send_header('Location',redirect_path)
+            self.end_headers()
+        elif 'build_village.php' in self.path:
+            post_str = post_data.decode('utf-8')
+            post_substrs = post_str.split('&')
+            name_substrs = post_substrs[0].split('=')
+            name = name_substrs[1]
+            at_substrs = post_substrs[1].split('=')
+            atstr = at_substrs[1]
+            g.build_village(name,atstr)
+            g.commit()
+            # alternate way of figuring out the name            
+            redirect_path = self.path.replace('build_village.php','main.html')
+            g.refresh_player_files()            
+            self.send_response(301)
+            self.send_header('Location',redirect_path)
+            self.end_headers()
+        elif 'build_city.php' in self.path:
+            post_str = post_data.decode('utf-8')
+            post_substrs = post_str.split('&')
+            name_substrs = post_substrs[0].split('=')
+            name = name_substrs[1]
+            at_substrs = post_substrs[1].split('=')
+            atstr = at_substrs[1]
+            g.build_city(name,atstr)
+            g.commit()
+            # alternate way of figuring out the name            
+            redirect_path = self.path.replace('build_city.php','main.html')
+            g.refresh_player_files()            
+            self.send_response(301)
+            self.send_header('Location',redirect_path)
+            self.end_headers()            
         elif 'build_road.php' in self.path:
             post_str = post_data.decode('utf-8')
             post_substrs = post_str.split('&')
             name_substrs = post_substrs[0].split('=')
             name = name_substrs[1]
+            from_substrs = post_substrs[1].split('=')
+            fromstr = from_substrs[1]
+            to_substrs = post_substrs[2].split('=')
+            tostr = to_substrs[1]
+            g.build_road(name,fromstr,tostr)
+            g.commit()
             # alternate way of figuring out the name            
             redirect_path = self.path.replace('build_road.php','main.html')
             g.refresh_player_files()            

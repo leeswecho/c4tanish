@@ -4,6 +4,7 @@ import shutil
 
 from renderer import Renderer
 from rules import Rules
+from utils import CoordDecode
 
 class Game():
     def __init__(self, loc='state.json'):
@@ -36,6 +37,59 @@ class Game():
             shutil.rmtree(player_path, ignore_errors=True)
         # copy template over to new directory
         shutil.copytree(template_path,player_path)
+
+    def build_village(self,player_name,buildat):
+        player = self.get_player_by_name(player_name)
+        player_id = player['id']
+        cd = CoordDecode(self.data['stride'])
+        pointid = cd.decode(buildat)
+        if (pointid == None):
+            print("ERROR: invalid inputs")
+        else:
+            if pointid in [i['point'] for i in self.data['villages']]:
+                print("ERROR: village already exists")
+            else:
+                new_village = {'point':pointid,'owner':player_id}
+                self.data['villages'].append(new_village)
+                
+    def build_city(self,player_name,buildat):
+        player = self.get_player_by_name(player_name)
+        player_id = player['id']
+        cd = CoordDecode(self.data['stride'])
+        pointid = cd.decode(buildat)
+        if (pointid == None):
+            print("ERROR: invalid inputs")
+        else:
+            if pointid in [i['point'] for i in self.data['cities']]:
+                print("ERROR: city already exists")
+            else:
+                new_city = {'point':pointid,'owner':player_id}
+                self.data['cities'].append(new_city)
+                
+    def build_road(self,player_name,fromstr,tostr):
+        player = self.get_player_by_name(player_name)
+        player_id = player['id']
+        cd = CoordDecode(self.data['stride'])
+        prepidfrom = cd.decode(fromstr)
+        prepidto = cd.decode(tostr)
+        if (prepidfrom == None) or (prepidto == None):
+            print("ERROR: invalid inputs")
+        else:
+            if prepidfrom < prepidto:
+                pidfrom = prepidfrom
+                pidto = prepidto
+            else:
+                pidfrom = prepidto
+                pidto = prepidfrom
+            isadj = cd.isadjindex(pidfrom,pidto)
+            if not isadj:
+                print("ERROR: road points not adjacent")
+            else:
+                if (pidfrom,pidto) in [(i['p1'],i['p2']) for i in self.data['roads']]:
+                    print("ERROR: road already exists")
+                else:
+                    new_road = {'p1':pidfrom,'p2':pidto,'owner':player_id}
+                    self.data['roads'].append(new_road)
 
     def refresh_player_files(self):
         # render the map

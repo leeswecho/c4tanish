@@ -16,14 +16,24 @@
 <br>
 	<img src="../../img/state.jpg" width="1200" height="500">
 <br>
+<h1>Refresh</h1>
+<form action="refresh.php" method="post">
+<input type="hidden" name="player" value="-template-name-"><br>
+<input type="submit" value="Refresh">
+</form>
 <h1>Game move:</h1>
 
 <form action="build_road.php" method="post">
-Player: <input type="text" name="player" value="-template-name-" readonly><br>
-From: <input type="text" name="from" value="ex. I3"><br>
-To: <input type="text" name="to" value="ex. J4"><br>
-<input type="submit" value="Build A Road">
+<input type="hidden" name="player" value="-template-name-"> From: <input type="text" name="from" value="ex. I3"> To: <input type="text" name="to" value="ex. J4"> <input type="submit" value="Build A Road">
 </form>
+<form action="build_village.php" method="post">
+<input type="hidden" name="player" value="-template-name-"> At: <input type="text" name="from" value="ex. I3">  <input type="submit" value="Build A Village">
+</form>
+<form action="build_city.php" method="post">
+<input type="hidden" name="player" value="-template-name-"> At: <input type="text" name="from" value="ex. I3">  <input type="submit" value="Build A City">
+</form>
+
+
 	 
     </body>
     </html>

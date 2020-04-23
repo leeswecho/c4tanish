@@ -1,6 +1,7 @@
 import json
 import random
 from renderer import Renderer
+from utils import CoordDecode
 
 class MapGenerator():
     def __init__(self):
@@ -19,13 +20,34 @@ class MapGenerator():
              diffrow = row - rowc
              diffcol = col - colc
              if (diffcol < 0) and (row % 2 == 0):
-                 diffcol -= 1#+1 accounts for the convention bias
+                 diffcol -= 1#-1 accounts for the convention bias
              norm = abs(diffrow/2) + abs(diffcol)
              if (norm < 5) and (abs(diffrow) < 5): # and (diffcol < 5):                 
                  tiles[i]['type'] = random.randint(0,5) # ocean
                  tiles[i]['dice'] = random.randint(1,12) # ocean
                  
         return tiles
+
+    def debug_add_structs(self,points,stride):
+        #just add some roads for testing
+        roads = []
+        cd = CoordDecode(stride)
+        roads.append({'p1':cd.decode('H10'),'p2':cd.decode('I11'),'owner':0})
+        roads.append({'p1':cd.decode('I11'),'p2':cd.decode('I12'),'owner':0})
+        roads.append({'p1':cd.decode('Q8'),'p2':cd.decode('R9'),'owner':1})
+        roads.append({'p1':cd.decode('R9'),'p2':cd.decode('S8'),'owner':1})
+
+        villages = []
+
+        villages.append({'point':cd.decode('H10'),'owner':0})
+        villages.append({'point':cd.decode('S8'),'owner':1})
+        
+        cities = []
+        
+        cities.append({'point':cd.decode('I12'),'owner':0})
+        cities.append({'point':cd.decode('Q8'),'owner':1})
+        
+        return (roads,villages,cities)
 
     def generate_mesh(self,xb=0,yb=0,sp=30,stride=15):
         points = []
@@ -80,22 +102,27 @@ class MapGenerator():
         height = stride-3
         return (points,tiles,stride,height,sp)
 
-mg = MapGenerator()
-(points, tiles, stride, height, spacing) = mg.generate_mesh(xb=120,yb=60,sp=40)
-tiles = mg.seed_tiles(tiles,stride)
 
+if __name__ == "__main__": 
+    mg = MapGenerator()
+    (points, tiles, stride, height, spacing) = mg.generate_mesh(xb=120,yb=60,sp=40)
+    tiles = mg.seed_tiles(tiles,stride)
+    (roads,villages,cities) = mg.debug_add_structs(points,stride)
 
-with open('state.json','r') as f:
-    data = json.load(f)
+    with open('state.json','r') as f:
+        data = json.load(f)
 
-data['points'] = points
-data['tiles'] = tiles
-data['stride'] = stride
-data['height'] = height
-data['spacing'] = spacing
+    data['points'] = points
+    data['tiles'] = tiles
+    data['stride'] = stride
+    data['height'] = height
+    data['spacing'] = spacing
+    data['roads'] = roads
+    data['villages'] = villages
+    data['cities'] = cities    
 
-with open('state.json','w') as f:
-    json.dump(data,f,indent=4)
+    with open('state.json','w') as f:
+        json.dump(data,f,indent=4)
 
-rnd = Renderer()
-rnd.render_map('state.jpg',data)
+    rnd = Renderer()
+    rnd.render_map('state.jpg',data)

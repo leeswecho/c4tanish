@@ -6,9 +6,14 @@
             "livery_id": 0
         },
         {
-            "name": "picard",
+            "name": "leon",
             "id": 1,
             "livery_id": 1
+        },
+        {
+            "name": "alice",
+            "id": 2,
+            "livery_id": 2
         }
     ],
     "points": [
@@ -1951,8 +1956,8 @@
             ],
             "row": 1,
             "col": 4,
-            "type": 4,
-            "dice": 2
+            "type": 3,
+            "dice": 6
         },
         {
             "points": [
@@ -1979,8 +1984,8 @@
             ],
             "row": 1,
             "col": 5,
-            "type": 2,
-            "dice": 9
+            "type": 5,
+            "dice": 7
         },
         {
             "points": [
@@ -2007,8 +2012,8 @@
             ],
             "row": 1,
             "col": 6,
-            "type": 5,
-            "dice": 4
+            "type": 2,
+            "dice": 7
         },
         {
             "points": [
@@ -2035,8 +2040,8 @@
             ],
             "row": 1,
             "col": 7,
-            "type": 1,
-            "dice": 6
+            "type": 5,
+            "dice": 3
         },
         {
             "points": [
@@ -2063,8 +2068,8 @@
             ],
             "row": 1,
             "col": 8,
-            "type": 5,
-            "dice": 11
+            "type": 3,
+            "dice": 12
         },
         {
             "points": [
@@ -2315,7 +2320,7 @@
             ],
             "row": 3,
             "col": 3,
-            "type": 3,
+            "type": 2,
             "dice": 2
         },
         {
@@ -2329,8 +2334,8 @@
             ],
             "row": 2,
             "col": 4,
-            "type": 1,
-            "dice": 11
+            "type": 0,
+            "dice": 8
         },
         {
             "points": [
@@ -2344,7 +2349,7 @@
             "row": 3,
             "col": 4,
             "type": 2,
-            "dice": 12
+            "dice": 9
         },
         {
             "points": [
@@ -2357,8 +2362,8 @@
             ],
             "row": 2,
             "col": 5,
-            "type": 5,
-            "dice": 5
+            "type": 3,
+            "dice": 7
         },
         {
             "points": [
@@ -2371,8 +2376,8 @@
             ],
             "row": 3,
             "col": 5,
-            "type": 2,
-            "dice": 11
+            "type": 1,
+            "dice": 6
         },
         {
             "points": [
@@ -2385,8 +2390,8 @@
             ],
             "row": 2,
             "col": 6,
-            "type": 2,
-            "dice": 4
+            "type": 3,
+            "dice": 2
         },
         {
             "points": [
@@ -2399,8 +2404,8 @@
             ],
             "row": 3,
             "col": 6,
-            "type": 5,
-            "dice": 9
+            "type": 3,
+            "dice": 6
         },
         {
             "points": [
@@ -2413,8 +2418,8 @@
             ],
             "row": 2,
             "col": 7,
-            "type": 1,
-            "dice": 6
+            "type": 5,
+            "dice": 8
         },
         {
             "points": [
@@ -2427,8 +2432,8 @@
             ],
             "row": 3,
             "col": 7,
-            "type": 5,
-            "dice": 1
+            "type": 1,
+            "dice": 9
         },
         {
             "points": [
@@ -2441,7 +2446,7 @@
             ],
             "row": 2,
             "col": 8,
-            "type": 5,
+            "type": 1,
             "dice": 4
         },
         {
@@ -2455,8 +2460,8 @@
             ],
             "row": 3,
             "col": 8,
-            "type": 2,
-            "dice": 2
+            "type": 0,
+            "dice": 5
         },
         {
             "points": [
@@ -2469,8 +2474,8 @@
             ],
             "row": 2,
             "col": 9,
-            "type": 3,
-            "dice": 1
+            "type": 5,
+            "dice": 10
         },
         {
             "points": [
@@ -2484,7 +2489,7 @@
             "row": 3,
             "col": 9,
             "type": 0,
-            "dice": 6
+            "dice": 5
         },
         {
             "points": [
@@ -2679,8 +2684,8 @@
             ],
             "row": 5,
             "col": 2,
-            "type": 0,
-            "dice": 3
+            "type": 4,
+            "dice": 4
         },
         {
             "points": [
@@ -2693,8 +2698,8 @@
             ],
             "row": 4,
             "col": 3,
-            "type": 5,
-            "dice": 3
+            "type": 4,
+            "dice": 11
         },
         {
             "points": [
@@ -2707,7 +2712,7 @@
             ],
             "row": 5,
             "col": 3,
-            "type": 1,
+            "type": 2,
             "dice": 9
         },
         {
@@ -2722,7 +2727,7 @@
             "row": 4,
             "col": 4,
             "type": 3,
-            "dice": 6
+            "dice": 1
         },
         {
             "points": [
@@ -2735,8 +2740,8 @@
             ],
             "row": 5,
             "col": 4,
-            "type": 4,
-            "dice": 8
+            "type": 2,
+            "dice": 4
         },
         {
             "points": [
@@ -2749,8 +2754,8 @@
             ],
             "row": 4,
             "col": 5,
-            "type": 3,
-            "dice": 2
+            "type": 0,
+            "dice": 7
         },
         {
             "points": [
@@ -2764,7 +2769,7 @@
             "row": 5,
             "col": 5,
             "type": 1,
-            "dice": 5
+            "dice": 8
         },
         {
             "points": [
@@ -2777,7 +2782,7 @@
             ],
             "row": 4,
             "col": 6,
-            "type": 2,
+            "type": 4,
             "dice": 8
         },
         {
@@ -2791,8 +2796,8 @@
             ],
             "row": 5,
             "col": 6,
-            "type": 5,
-            "dice": 12
+            "type": 0,
+            "dice": 7
         },
         {
             "points": [
@@ -2805,8 +2810,8 @@
             ],
             "row": 4,
             "col": 7,
-            "type": 4,
-            "dice": 5
+            "type": 3,
+            "dice": 3
         },
         {
             "points": [
@@ -2819,8 +2824,8 @@
             ],
             "row": 5,
             "col": 7,
-            "type": 3,
-            "dice": 5
+            "type": 1,
+            "dice": 4
         },
         {
             "points": [
@@ -2833,8 +2838,8 @@
             ],
             "row": 4,
             "col": 8,
-            "type": 5,
-            "dice": 11
+            "type": 3,
+            "dice": 6
         },
         {
             "points": [
@@ -2847,8 +2852,8 @@
             ],
             "row": 5,
             "col": 8,
-            "type": 0,
-            "dice": 3
+            "type": 4,
+            "dice": 8
         },
         {
             "points": [
@@ -2862,7 +2867,7 @@
             "row": 4,
             "col": 9,
             "type": 4,
-            "dice": 9
+            "dice": 5
         },
         {
             "points": [
@@ -2875,8 +2880,8 @@
             ],
             "row": 5,
             "col": 9,
-            "type": 4,
-            "dice": 9
+            "type": 1,
+            "dice": 3
         },
         {
             "points": [
@@ -2889,8 +2894,8 @@
             ],
             "row": 4,
             "col": 10,
-            "type": 3,
-            "dice": 7
+            "type": 0,
+            "dice": 6
         },
         {
             "points": [
@@ -2903,8 +2908,8 @@
             ],
             "row": 5,
             "col": 10,
-            "type": 5,
-            "dice": 4
+            "type": 3,
+            "dice": 8
         },
         {
             "points": [
@@ -3085,8 +3090,8 @@
             ],
             "row": 6,
             "col": 3,
-            "type": 5,
-            "dice": 2
+            "type": 4,
+            "dice": 7
         },
         {
             "points": [
@@ -3099,8 +3104,8 @@
             ],
             "row": 7,
             "col": 3,
-            "type": 3,
-            "dice": 8
+            "type": 5,
+            "dice": 11
         },
         {
             "points": [
@@ -3113,8 +3118,8 @@
             ],
             "row": 6,
             "col": 4,
-            "type": 3,
-            "dice": 5
+            "type": 4,
+            "dice": 4
         },
         {
             "points": [
@@ -3127,8 +3132,8 @@
             ],
             "row": 7,
             "col": 4,
-            "type": 1,
-            "dice": 2
+            "type": 0,
+            "dice": 9
         },
         {
             "points": [
@@ -3142,7 +3147,7 @@
             "row": 6,
             "col": 5,
             "type": 5,
-            "dice": 2
+            "dice": 6
         },
         {
             "points": [
@@ -3156,7 +3161,7 @@
             "row": 7,
             "col": 5,
             "type": 1,
-            "dice": 9
+            "dice": 6
         },
         {
             "points": [
@@ -3169,8 +3174,8 @@
             ],
             "row": 6,
             "col": 6,
-            "type": 4,
-            "dice": 8
+            "type": 2,
+            "dice": 3
         },
         {
             "points": [
@@ -3183,8 +3188,8 @@
             ],
             "row": 7,
             "col": 6,
-            "type": 1,
-            "dice": 12
+            "type": 2,
+            "dice": 2
         },
         {
             "points": [
@@ -3197,8 +3202,8 @@
             ],
             "row": 6,
             "col": 7,
-            "type": 4,
-            "dice": 1
+            "type": 1,
+            "dice": 8
         },
         {
             "points": [
@@ -3212,7 +3217,7 @@
             "row": 7,
             "col": 7,
             "type": 5,
-            "dice": 7
+            "dice": 1
         },
         {
             "points": [
@@ -3225,8 +3230,8 @@
             ],
             "row": 6,
             "col": 8,
-            "type": 2,
-            "dice": 3
+            "type": 1,
+            "dice": 11
         },
         {
             "points": [
@@ -3239,8 +3244,8 @@
             ],
             "row": 7,
             "col": 8,
-            "type": 5,
-            "dice": 5
+            "type": 1,
+            "dice": 9
         },
         {
             "points": [
@@ -3253,8 +3258,8 @@
             ],
             "row": 6,
             "col": 9,
-            "type": 2,
-            "dice": 11
+            "type": 0,
+            "dice": 1
         },
         {
             "points": [
@@ -3267,8 +3272,8 @@
             ],
             "row": 7,
             "col": 9,
-            "type": 1,
-            "dice": 3
+            "type": 5,
+            "dice": 5
         },
         {
             "points": [
@@ -3281,8 +3286,8 @@
             ],
             "row": 6,
             "col": 10,
-            "type": 2,
-            "dice": 1
+            "type": 5,
+            "dice": 4
         },
         {
             "points": [
@@ -3505,8 +3510,8 @@
             ],
             "row": 8,
             "col": 4,
-            "type": 2,
-            "dice": 6
+            "type": 3,
+            "dice": 1
         },
         {
             "points": [
@@ -3520,7 +3525,7 @@
             "row": 9,
             "col": 4,
             "type": 2,
-            "dice": 9
+            "dice": 7
         },
         {
             "points": [
@@ -3533,8 +3538,8 @@
             ],
             "row": 8,
             "col": 5,
-            "type": 4,
-            "dice": 8
+            "type": 0,
+            "dice": 12
         },
         {
             "points": [
@@ -3547,8 +3552,8 @@
             ],
             "row": 9,
             "col": 5,
-            "type": 2,
-            "dice": 10
+            "type": 3,
+            "dice": 3
         },
         {
             "points": [
@@ -3561,8 +3566,8 @@
             ],
             "row": 8,
             "col": 6,
-            "type": 2,
-            "dice": 12
+            "type": 4,
+            "dice": 5
         },
         {
             "points": [
@@ -3575,8 +3580,8 @@
             ],
             "row": 9,
             "col": 6,
-            "type": 5,
-            "dice": 7
+            "type": 3,
+            "dice": 3
         },
         {
             "points": [
@@ -3590,7 +3595,7 @@
             "row": 8,
             "col": 7,
             "type": 0,
-            "dice": 1
+            "dice": 2
         },
         {
             "points": [
@@ -3603,8 +3608,8 @@
             ],
             "row": 9,
             "col": 7,
-            "type": 0,
-            "dice": 5
+            "type": 2,
+            "dice": 8
         },
         {
             "points": [
@@ -3617,8 +3622,8 @@
             ],
             "row": 8,
             "col": 8,
-            "type": 2,
-            "dice": 3
+            "type": 4,
+            "dice": 1
         },
         {
             "points": [
@@ -3631,8 +3636,8 @@
             ],
             "row": 9,
             "col": 8,
-            "type": 1,
-            "dice": 8
+            "type": 2,
+            "dice": 5
         },
         {
             "points": [
@@ -3645,8 +3650,8 @@
             ],
             "row": 8,
             "col": 9,
-            "type": 1,
-            "dice": 5
+            "type": 3,
+            "dice": 12
         },
         {
             "points": [
@@ -4169,5 +4174,104 @@
     ],
     "stride": 15,
     "height": 12,
-    "spacing": 40
+    "spacing": 40,
+    "roads": [
+        {
+            "p1": 154,
+            "p2": 169,
+            "owner": 0
+        },
+        {
+            "p1": 169,
+            "p2": 184,
+            "owner": 0
+        },
+        {
+            "p1": 128,
+            "p2": 144,
+            "owner": 1
+        },
+        {
+            "p1": 144,
+            "p2": 129,
+            "owner": 1
+        },
+        {
+            "p1": 139,
+            "p2": 154,
+            "owner": 0
+        },
+        {
+            "p1": 123,
+            "p2": 139,
+            "owner": 0
+        },
+        {
+            "p1": 124,
+            "p2": 139,
+            "owner": 0
+        },
+        {
+            "p1": 113,
+            "p2": 128,
+            "owner": 1
+        },
+        {
+            "p1": 109,
+            "p2": 124,
+            "owner": 0
+        },
+        {
+            "p1": 95,
+            "p2": 109,
+            "owner": 0
+        },
+        {
+            "p1": 95,
+            "p2": 110,
+            "owner": 0
+        },
+        {
+            "p1": 96,
+            "p2": 110,
+            "owner": 0
+        },
+        {
+            "p1": 248,
+            "p2": 263,
+            "owner": 2
+        }
+    ],
+    "villages": [
+        {
+            "point": 154,
+            "owner": 0
+        },
+        {
+            "point": 129,
+            "owner": 1
+        },
+        {
+            "point": 95,
+            "owner": 0
+        },
+        {
+            "point": 263,
+            "owner": 2
+        }
+    ],
+    "cities": [
+        {
+            "point": 184,
+            "owner": 0
+        },
+        {
+            "point": 128,
+            "owner": 1
+        },
+        {
+            "point": 124,
+            "owner": 0
+        }
+    ]
 }
