@@ -16,7 +16,7 @@ Rules['terrain'].append({'id':1,'name':'pasture','fill':"#20ff40",'yield':[0,1,0
 Rules['terrain'].append({'id':2,'name':'fields','fill':"#e0d030",'yield':[0,0,1,0,0,0]})
 Rules['terrain'].append({'id':3,'name':'hills','fill':"#a09048",'yield':[0,0,0,1,0,0]})
 Rules['terrain'].append({'id':4,'name':'mountain','fill':"#808080",'yield':[0,0,0,0,1,0]})
-Rules['terrain'].append({'id':5,'name':'river','fill':"#3c88d5",'yield':[0,1,0,0,0,0]})
+Rules['terrain'].append({'id':5,'name':'river','fill':"#3c88d5",'yield':[0,0,0,0,0,0]})
 Rules['terrain'].append({'id':6,'name':'desert','fill':"#f8d8c0",'yield':[0,0,0,0,0,0]})
 Rules['terrain'].append({'id':7,'name':'ocean','fill':"#0000bb",'yield':[0,0,0,0,0,0]})
 

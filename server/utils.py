@@ -1,12 +1,40 @@
+from rules import Rules
+
+def resource_string(resources):
+    ret = ''
+    count = 0
+    for i in range(0,len(resources)):
+        if resources[i] > 0:
+            if count > 0:
+                ret += ','
+            count += 1
+            ret += str(resources[i])
+            ret += ' ' + Rules['resources'][i]['name']
+    return ret
 
 class CoordDecode():
     def __init__(self, stride,width):
         self.stride = stride
         self.width = width
+
+    def validate_coord(self, coord):
+        coordlen = len(coord)
+        if coordlen < 2:
+            return False
+        if coordlen > 4:
+            return False       
+        if not coord[0].isalpha():
+            return False
+        if not coord[coordlen-1].isnumeric():
+            return False
+        return True
         
     def decode(self,coord):
         # convert to upper
         coord = coord.upper()
+        if not self.validate_coord(coord):
+            print('invalid coord: ' + coord)
+            return None            
         # check if single or double alpha
         if coord[1].isalpha():            
             prow = int(coord[2:])            

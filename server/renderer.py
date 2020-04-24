@@ -93,6 +93,9 @@ class Renderer():
         for i in range(0, len(data['game_msg'])):
             img1.text((900,300+i*10),data['game_msg'][i], align='left')
 
+        # render turn
+        img1.text((900,50),'TURN ' + str(data['turn']), align='left')
+
         #render player names
         self.sub_render_players(img1,data)
 

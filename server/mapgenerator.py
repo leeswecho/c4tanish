@@ -123,6 +123,7 @@ if __name__ == "__main__":
     data['roads'] = roads
     data['villages'] = villages
     data['cities'] = cities
+    data['turn'] = 0
 
     data['game_msg'] = ''
 

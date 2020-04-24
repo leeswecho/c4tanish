@@ -40,6 +40,7 @@ class my_server(http.server.SimpleHTTPRequestHandler):
             #clear player's ret msg
             player = g.get_player_by_name(name)
             g.set_ret_msg(player['id'],'')
+            g.commit()
             # alternate way of figuring out the name            
             redirect_path = self.path.replace('refresh.php','main.html')
             g.refresh_player_files()            

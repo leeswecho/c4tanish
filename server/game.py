@@ -6,6 +6,7 @@ import random
 from renderer import Renderer
 from rules import Rules
 from utils import CoordDecode
+from utils import resource_string
 from operator import add
 
 class Game():
@@ -107,15 +108,16 @@ class Game():
                         rgained[owner_id] = list( map(add, rgained[owner_id], Rules['terrain'][tiletype]['yield']))   
         for i in range(0,len(rgained)):
             player = self.data['players'][i]
-            game_msg.append(player['name'] + ' got ' + str(rgained[i]))
+            game_msg.append(player['name'] + ' got ' + resource_string(rgained[i]))
             self.data['players'][i]['resources'] = list( map(add, self.data['players'][i]['resources'], rgained[i]))
             
         self.data['game_msg'] = game_msg
+        self.data['turn'] += 1
         
     def build_road(self,player_name,fromstr,tostr):
         player = self.get_player_by_name(player_name)
         player_id = player['id']
-        cd = CoordDecode(self.data['stride'])
+        cd = CoordDecode(self.data['stride'],self.data['width'])
         prepidfrom = cd.decode(fromstr)
         prepidto = cd.decode(tostr)
         if (prepidfrom == None) or (prepidto == None):
