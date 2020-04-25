@@ -317,6 +317,9 @@ class Game():
     def create_player_struct(self,name):        
         new_player = {'name':name, 'ret':'','status':''}
         new_player['resources'] = [0] * len(Rules['resources'])
+        # give player enough money to build two roads
+        new_player['resources'][0] = 2
+        new_player['resources'][3] = 2        
         
         return new_player
 
