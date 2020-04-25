@@ -3,11 +3,12 @@
         {
             "name": "slee",
             "ret": "",
+            "status": "im+done",
             "resources": [
                 0,
-                33,
-                2,
-                2,
+                0,
+                0,
+                0,
                 0,
                 0
             ],
@@ -17,12 +18,13 @@
         {
             "name": "leon",
             "ret": "",
+            "status": "hello",
             "resources": [
                 0,
-                6,
                 0,
-                6,
-                2,
+                0,
+                0,
+                0,
                 0
             ],
             "id": 1,
@@ -4208,6 +4210,46 @@
             "p1": 144,
             "p2": 129,
             "owner": 1
+        },
+        {
+            "p1": 155,
+            "p2": 169,
+            "owner": 0
+        },
+        {
+            "p1": 140,
+            "p2": 155,
+            "owner": 0
+        },
+        {
+            "p1": 217,
+            "p2": 231,
+            "owner": 0
+        },
+        {
+            "p1": 184,
+            "p2": 200,
+            "owner": 0
+        },
+        {
+            "p1": 200,
+            "p2": 215,
+            "owner": 0
+        },
+        {
+            "p1": 215,
+            "p2": 230,
+            "owner": 0
+        },
+        {
+            "p1": 184,
+            "p2": 199,
+            "owner": 0
+        },
+        {
+            "p1": 199,
+            "p2": 214,
+            "owner": 0
         }
     ],
     "villages": [
@@ -4218,6 +4260,18 @@
         {
             "point": 129,
             "owner": 1
+        },
+        {
+            "point": 231,
+            "owner": 0
+        },
+        {
+            "point": 230,
+            "owner": 0
+        },
+        {
+            "point": 214,
+            "owner": 0
         }
     ],
     "cities": [
@@ -4228,13 +4282,17 @@
         {
             "point": 128,
             "owner": 1
+        },
+        {
+            "point": 140,
+            "owner": 0
         }
     ],
     "game_msg": [
-        "leon rolled a 2!",
-        "slee got 2 wheat",
+        "slee rolled a 3!",
+        "slee got 2 lumber",
         "leon got "
     ],
     "width": 14,
-    "turn": 5
+    "turn": 22
 }

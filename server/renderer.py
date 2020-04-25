@@ -17,10 +17,12 @@ class Renderer():
         imgdraw.text((tx,ty),'Players:',fill='#ffffff',align='left')
         for player in players:
             name = player['name']
+            status = player['status']
+            playerstr = name + ': ' + status
             pid = player['id']
             tx = 930
             ty = 100 + pid*20
-            imgdraw.text((tx,ty),name,fill='#ffffff',align='left')
+            imgdraw.text((tx,ty),playerstr,fill='#ffffff',align='left')
             bx = 900
             by = 100 + pid*20
             p1 = (bx+10,by+4)

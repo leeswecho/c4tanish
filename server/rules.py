@@ -31,4 +31,10 @@ Rules['liveries'].append({'id':5,'name':'purple','fill':"#ff00ff"})
 Rules['liveries'].append({'id':6,'name':'brown','fill':"#ffff00"})
 
 
+Rules['costs'] = {}
+Rules['costs']['road']    = [1,0,0,1,0,0]
+Rules['costs']['village'] = [1,1,1,1,0,0]
+Rules['costs']['city']    = [0,0,2,0,3,0]
 
+Rules['free_villages'] = 2
+Rules['free_roads'] = 2

@@ -46,6 +46,23 @@ class my_server(http.server.SimpleHTTPRequestHandler):
             g.refresh_player_files()            
             self.send_response(301)
             self.send_header('Location',redirect_path)
+            self.end_headers()
+        elif 'status.php' in self.path:
+            post_str = post_data.decode('utf-8')
+            post_substrs = post_str.split('&')
+            name_substrs = post_substrs[0].split('=')
+            name = name_substrs[1]
+            status_substrs = post_substrs[1].split('=')
+            status = status_substrs[1]           
+            #set player's ret msg
+            player = g.get_player_by_name(name)
+            g.set_status_msg(player['id'],status)
+            g.commit()
+            # alternate way of figuring out the name            
+            redirect_path = self.path.replace('status.php','main.html')
+            g.refresh_player_files()            
+            self.send_response(301)
+            self.send_header('Location',redirect_path)
             self.end_headers()            
         elif 'roll_dice.php' in self.path:
             post_str = post_data.decode('utf-8')
