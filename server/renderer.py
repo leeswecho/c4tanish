@@ -18,7 +18,12 @@ class Renderer():
         for player in players:
             name = player['name']
             status = player['status']
-            playerstr = name + ': ' + status
+
+            num_villages = [i['owner'] for i in data['villages']].count(player['id'])
+            num_cities = [i['owner'] for i in data['cities']].count(player['id'])
+            vps = num_villages*Rules['victory_points']['village'] + num_cities*Rules['victory_points']['city']
+            
+            playerstr = name + '(' + str(vps) + 'VPs): ' + status
             pid = player['id']
             tx = 930
             ty = 100 + pid*20

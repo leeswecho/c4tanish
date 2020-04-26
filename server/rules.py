@@ -36,5 +36,10 @@ Rules['costs']['road']    = [1,0,0,1,0,0]
 Rules['costs']['village'] = [1,1,1,1,0,0]
 Rules['costs']['city']    = [0,0,2,0,3,0]
 
+Rules['victory_points'] = {}
+Rules['victory_points']['village'] = 1
+Rules['victory_points']['city']    = 2
+
+
 Rules['free_villages'] = 2
 Rules['free_roads'] = 2
